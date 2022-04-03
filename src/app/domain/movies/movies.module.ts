@@ -1,3 +1,4 @@
+import { MovieCardModule } from './../../widgets/movie-card/movie-card.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { MoviesRoutingModule } from '@domain/movies/movies-routing.module';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { MoviesComponent } from '@domain/movies/movies.component';
     CommonModule,
     MoviesRoutingModule,
     TranslateModule,
+    MovieCardModule,
   ],
 })
 export class MoviesModule { }

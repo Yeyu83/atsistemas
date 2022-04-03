@@ -1,4 +1,4 @@
 <h1>{{ 'DOMAIN.MOVIES.TITLE' | translate }}</h1>
-<ng-container *ngIf="movies$ | async as films">
-  <pre>{{ films | json }}</pre>
+<ng-container *ngIf="movies$ | async as movies">
+  <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
 </ng-container>
