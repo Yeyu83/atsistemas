@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from '@shared/layout/layout.module';
+import { LoadingModule } from '@shared/components/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LayoutModule } from '@shared/layout/layout.module';
     BrowserAnimationsModule,
     RouterModule,
     CoreModule,
-    LayoutModule
+    LayoutModule,
+    LoadingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
