@@ -14,4 +14,12 @@
     padding: 1rem;
     max-width: fit-content;
   }
+
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+      padding-right: .2rem;
+    }
+  }
 }
