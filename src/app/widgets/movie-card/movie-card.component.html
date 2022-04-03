@@ -1,0 +1,11 @@
+<mat-card *ngIf="movie" class="movies-card">
+  <mat-card-header>
+    <mat-card-title>{{ movie.title }}</mat-card-title>
+  </mat-card-header>
+  <img *ngIf="movie.poster" mat-card-image [src]="movie.poster" alt="Poster movie">
+  <mat-card-content>
+    <ul *ngIf="movie.genre?.length">
+      <li *ngFor="let genre of movie.genre">{{ genre }}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>
