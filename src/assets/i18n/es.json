@@ -1,4 +1,7 @@
-
 {
-  "EXAMPLE": "ejemplo"
+  "DOMAIN": {
+    "HOME": {
+      "WELCOME": "Bienvenido a The Movies App..."
+    }
+  }
 }
