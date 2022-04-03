@@ -6,6 +6,7 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { CoreRoutingModule } from './core-routing.module';
 import { LoadingInterceptor } from '@app/interceptors/loading.interceptor';
 import { HttpErrorHandler } from '@app/handlers/http-error.handler';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -17,6 +18,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonModule,
     CoreRoutingModule,
     HttpClientModule,
+    MatSnackBarModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
