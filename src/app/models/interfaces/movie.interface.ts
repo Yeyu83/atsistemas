@@ -1,6 +1,6 @@
 import { Genre } from '@models/enums/genre.enum';
 
-export interface Film {
+export interface Movie {
   id: number,
   title: string,
   poster: string
