@@ -26,6 +26,7 @@
       "@app/*": ["app/*"],
       "@models/*": ["app/models/*"],
       "@shared/*": ["app/shared/*"],
+      "@domain/*": ["app/domain/*"],
       "@environments/*": ["environments/*"],
     }
   },
