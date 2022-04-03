@@ -4,17 +4,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Injectable({
   providedIn: 'root',
 })
-export class NotificationService {
+export class HttpErrorService {
   constructor(
     public snackBar: MatSnackBar,
     private zone: NgZone,
   ) { }
 
-  public showSuccess(message: string): void {
-    this.snackBar.open(message);
-  }
-
-  public showError(message: string): void {
+  public show(message: string): void {
     this.zone.run(() => {
       this.snackBar.open(message, 'x', { duration: 5000 });
     });
