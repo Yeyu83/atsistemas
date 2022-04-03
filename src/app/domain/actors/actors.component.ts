@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActorsService } from '@shared/services/actors.service';
 import { Actor } from '@models/interfaces/actor.interface';
 import { Observable } from 'rxjs';
@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   selector: 'app-actors',
   templateUrl: './actors.component.html',
   styleUrls: ['./actors.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ActorsComponent implements OnInit {
   public actors$: Observable<Actor[]> | undefined;
