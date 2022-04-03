@@ -1,7 +1,16 @@
 {
   "DOMAIN": {
     "HOME": {
-      "WELCOME": "Bienvenido a The Movies App"
+      "WELCOME": "Bienvenido a The Movies App..."
+    }
+  },
+  "LAYOUT": {
+    "HEADER": {
+      "NAV": {
+        "MOVIES": "Películas",
+        "ACTORS": "Actores",
+        "COMPANIES": "Estudios"
+      }
     }
   }
 }
