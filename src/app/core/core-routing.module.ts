@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+const notFoundRoute = {
+  path: '**',
+  loadChildren: () => import('@domain/not-found/not-found.module').then((m) => m.NotFoundModule),
+};
+
 const routes: Routes = [
   {
     path: '',
@@ -27,7 +32,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot([...routes, notFoundRoute])
   ],
   exports: [RouterModule],
 })
