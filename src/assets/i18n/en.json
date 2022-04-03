@@ -2,6 +2,9 @@
   "DOMAIN": {
     "HOME": {
       "WELCOME": "Bienvenido a The Movies App..."
+    },
+    "MOVIES": {
+      "TITLE": "Películas"
     }
   },
   "LAYOUT": {
