@@ -7,7 +7,7 @@ import { map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class FilmsService {
+export class MoviesService {
   private readonly MOVIES_API_URL = `${environment.api.url}/${environment.api.endpoints.movies}`;
 
   constructor(
