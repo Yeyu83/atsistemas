@@ -11,6 +11,9 @@
     },
     "ACTORS": {
       "TITLE": "Actores"
+    },
+    "NOT_FOUND": {
+      "MESSAGE": "¡Página no encontrada!"
     }
   },
   "LAYOUT": {
