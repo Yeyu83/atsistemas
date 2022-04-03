@@ -5,6 +5,9 @@
     },
     "MOVIES": {
       "TITLE": "Películas"
+    },
+    "COMPANIES": {
+      "TITLE": "Estudios"
     }
   },
   "LAYOUT": {
