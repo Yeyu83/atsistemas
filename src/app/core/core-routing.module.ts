@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'companies',
     loadChildren: () => import('@domain/companies/companies.module').then((m) => m.CompaniesModule),
   },
+  {
+    path: 'actors',
+    loadChildren: () => import('@domain/actors/actors.module').then((m) => m.ActorsModule),
+  },
 ];
 
 @NgModule({
