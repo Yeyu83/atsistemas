@@ -5,6 +5,11 @@ import { ActorsComponent } from './actors.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'all',
+    pathMatch: 'full'
+  },
+  {
+    path: 'all',
     component: ActorsComponent,
   },
 ];

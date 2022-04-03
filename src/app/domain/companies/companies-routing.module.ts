@@ -5,6 +5,11 @@ import { CompaniesComponent } from '@domain/companies/companies.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'all',
+    pathMatch: 'full'
+  },
+  {
+    path: 'all',
     component: CompaniesComponent,
   },
 ];
