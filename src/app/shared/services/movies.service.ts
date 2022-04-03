@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Movie } from '@models/interfaces/movie.interface';
-import { environment } from 'environments/environment';
+import { environment } from '@environments/environment';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -14,11 +14,11 @@ export class MoviesService {
     private readonly http: HttpClient,
   ) { }
 
-  public getFilms(): Observable<Movie[]> {
+  public getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.MOVIES_API_URL);
   }
 
-  public getFilmById(id: number): Observable<Movie | undefined> {
+  public getMovieById(id: number): Observable<Movie | undefined> {
     return this.http.get<Movie[]>(this.MOVIES_API_URL)
       .pipe(map((movies: Movie[]) => movies.find((movie: Movie) => movie.id === Number(id))));
   }
