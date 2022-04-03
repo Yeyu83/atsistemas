@@ -1,0 +1,26 @@
+.movies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 2rem;
+}
+
+.movies-menu {
+  &__container {
+    height: 100vh;
+    position: fixed;
+    width: 18.75rem;
+    z-index: 2;
+
+    &-icon {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    ul {
+      list-style: none;
+    }
+  }
+}
