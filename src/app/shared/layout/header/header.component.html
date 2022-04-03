@@ -1,0 +1,26 @@
+<header class="movies-header">
+  <mat-toolbar class="movies-toolbar">
+    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+    <h3>{{ 'LAYOUT.HEADER.TITLE' | translate }}</h3>
+  </mat-toolbar>
+</header>
+<mat-drawer-container class="movies-menu">
+  <mat-drawer #drawer class="movies-menu__container" mode="over">
+    <div class="movies-menu__container-icon">
+      <mat-icon (click)="drawer.toggle()">close</mat-icon>
+    </div>
+    <nav>
+      <ul>
+        <li (click)="drawer.toggle()" routerLink="/movies">
+          {{ 'LAYOUT.HEADER.NAV.MOVIES' | translate }}
+        </li>
+        <li (click)="drawer.toggle()" routerLink="/actors">
+          {{ 'LAYOUT.HEADER.NAV.ACTORS' | translate }}
+        </li>
+        <li (click)="drawer.toggle()" routerLink="/companies">
+          {{ 'LAYOUT.HEADER.NAV.COMPANIES' | translate }}
+        </li>
+      </ul>
+    </nav>
+  </mat-drawer>
+</mat-drawer-container>
