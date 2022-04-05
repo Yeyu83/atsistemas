@@ -9,7 +9,7 @@ import { LoadingModule } from '@shared/components/loading/loading.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

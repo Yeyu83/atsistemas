@@ -22,6 +22,18 @@
         "MOVIES": "Películas",
         "ACTORS": "Actores",
         "COMPANIES": "Estudios"
+      },
+      "TITLE": {
+        "MOVIES": {
+          "ALL": "Películas",
+          "NEW": "Nueva película"
+        },
+        "ACTORS": {
+          "ALL": "Actores"
+        },
+        "COMPANIES": {
+          "ALL": "Estudios"
+        }
       }
     }
   }
