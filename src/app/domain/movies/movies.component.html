@@ -1,4 +1,3 @@
-<h1>{{ 'DOMAIN.MOVIES.TITLE' | translate }}</h1>
 <ng-container *ngIf="movies$ | async as movies">
   <app-movie-card
     *ngFor="let movie of movies"
