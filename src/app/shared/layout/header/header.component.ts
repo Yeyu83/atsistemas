@@ -1,10 +1,8 @@
 import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router, RoutesRecognized } from '@angular/router';
-import { LayoutSchema } from '@models/interfaces/layout-schema.interface';
-import { LayoutService } from '@shared/services/layout.service';
-import { TitleService } from '@shared/services/title.service';
-import { filter, map, Observable } from 'rxjs';
+import { HeaderState } from '@models/interfaces/layout-state.interface';
+import { LayoutService } from '@app/shared/services/layout.service';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -13,27 +11,15 @@ import { filter, map, Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-  public title$: Observable<string> | undefined;
-
-  public layout$: Observable<LayoutSchema | undefined> | undefined;
+  public headerState$: Observable<HeaderState | undefined> | undefined
 
   constructor(
-    private readonly titleService: TitleService,
-    public readonly location: Location,
     private readonly layoutService: LayoutService,
-    private router: Router,
+    public readonly location: Location,
   ) { }
 
   ngOnInit(): void {
-    this.getHeaderData();
-  }
-
-  private getHeaderData(): void {
-    this.layout$ = this.router.events
-      .pipe(
-        filter(event => event instanceof RoutesRecognized),
-        map(event => this.layoutService.getLayoutByRoute((event as any).urlAfterRedirects)),
-      );
-    this.title$ = this.titleService.getTitle();
+    this.headerState$ = this.layoutService.getLayoutState()
+      .pipe(map(layoutState => layoutState?.header))
   }
 }

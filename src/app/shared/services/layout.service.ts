@@ -1,31 +1,29 @@
 import { Injectable } from '@angular/core';
-import { LAYOUT_TYPES } from '@models/constants/layout-types.constant';
-import { LayoutTypesEnum } from '@models/enums/layout-types.enum';
-import { RoutesEnum } from '@models/enums/routes.enum';
+import { LayoutStateTypes } from '@models/constants/layout-state-types.constant';
+import { LayoutStateNames } from '@models/enums/layout-state-names.enum';
+import { LayoutState } from '@models/interfaces/layout-state.interface';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LayoutService {
-  private routeLayouts = new Map<RoutesEnum, LayoutTypesEnum>([
-    [RoutesEnum.Home, LayoutTypesEnum.List],
-    [RoutesEnum.MoviesList, LayoutTypesEnum.List],
-    [RoutesEnum.MoviesDetail, LayoutTypesEnum.Detail],
-    [RoutesEnum.MoviesNew, LayoutTypesEnum.New],
-    [RoutesEnum.CompaniesList, LayoutTypesEnum.List],
-    [RoutesEnum.ActorsList, LayoutTypesEnum.List],
-  ]);
+  private layoutState$ = new BehaviorSubject<LayoutState | null>(null);
 
-  public getLayoutByRoute(route: string): any {
-    const layoutTypeKey = this.getLayoutType(this.getRouteKey(route))
-    return LAYOUT_TYPES.find(item => item.type === layoutTypeKey)?.layout
+  public getLayoutState(): Observable<LayoutState | null> {
+    return this.layoutState$.asObservable()
   }
 
-  private getRouteKey(route: string): RoutesEnum | undefined {
-    return Object.values(RoutesEnum).find(item => route.includes(item));
+  public setLayoutState(url: string): void {
+    const layoutStateName = this.getLayoutStateNameFromUrl(url);
+    const layoutState = LayoutStateTypes.get(layoutStateName);
+    layoutState && this.layoutState$.next(layoutState);
   }
 
-  private getLayoutType(routesEnumKey: RoutesEnum | undefined): LayoutTypesEnum | undefined {
-    return this.routeLayouts.get(routesEnumKey as RoutesEnum);
+  private getLayoutStateNameFromUrl(url: string): any {
+    const layoutStateNamesArr: string[] = Object.values(LayoutStateNames);
+    const layoutStateNameMatched = (url.split('/')
+      .find(segment => layoutStateNamesArr.includes(segment)) as LayoutStateNames);
+    return layoutStateNameMatched;
   }
 }
