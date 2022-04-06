@@ -1,10 +1,12 @@
-<header *ngIf="headerState$ | async as headerState" class="movies-header">
+<header class="movies-header">
   <mat-toolbar class="movies-toolbar">
-    <mat-icon *ngIf="headerState.menu else backIcon" (click)="drawer.toggle()">menu</mat-icon>
+    <ng-container *ngIf="layout$ | async as layout">
+      <mat-icon *ngIf="layout.header?.menu else backIcon" (click)="drawer.toggle()">menu</mat-icon>
+    </ng-container>
     <ng-template #backIcon>
       <mat-icon (click)="location.back()">keyboard_backspace</mat-icon>
     </ng-template>
-    <h3>{{ 'LAYOUT.HEADER.TITLE' | translate }}</h3>
+    <h3 *ngIf="title$ | async as title">{{ title | translate }}</h3>
   </mat-toolbar>
 </header>
 <mat-drawer-container class="movies-menu">
