@@ -11,7 +11,7 @@ import { TitleService } from '@shared/services/title.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CompaniesComponent implements OnInit {
-  public companies$: Observable<Company[]> | undefined;
+  public companies$!: Observable<Company[]>;
 
   constructor(
     private readonly companiesService: CompaniesService,

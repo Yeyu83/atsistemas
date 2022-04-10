@@ -8,5 +8,5 @@ import { Movie } from '@models/interfaces/movie.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCardComponent {
-  @Input() movie: Movie | undefined;
+  @Input() movie!: Movie;
 }

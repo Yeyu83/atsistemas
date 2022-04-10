@@ -1,7 +1,7 @@
 <header class="movies-header">
   <mat-toolbar class="movies-toolbar">
-    <ng-container *ngIf="layout$ | async as layout">
-      <mat-icon *ngIf="layout.header?.menu else backIcon" (click)="drawer.toggle()">menu</mat-icon>
+    <ng-container *ngIf="content$ | async as header">
+      <mat-icon *ngIf="header.menu else backIcon" (click)="drawer.toggle()">menu</mat-icon>
     </ng-container>
     <ng-template #backIcon>
       <mat-icon (click)="location.back()">keyboard_backspace</mat-icon>

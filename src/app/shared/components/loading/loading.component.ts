@@ -8,7 +8,7 @@ import { LoadingService } from '../../services/loading.service';
   styleUrls: ['./loading.component.scss'],
 })
 export class LoadingComponent implements OnInit {
-  public isLoading$: Observable<boolean> | undefined;
+  public isLoading$!: Observable<boolean>;
 
   constructor(
     private loadingService: LoadingService,
