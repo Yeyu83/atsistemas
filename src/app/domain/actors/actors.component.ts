@@ -11,7 +11,7 @@ import { TitleService } from '@shared/services/title.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ActorsComponent implements OnInit {
-  public actors$: Observable<Actor[]> | undefined;
+  public actors$!: Observable<Actor[]>;
 
   constructor(
     private readonly actorsService: ActorsService,

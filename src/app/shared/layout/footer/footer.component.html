@@ -1,0 +1,3 @@
+<footer *ngIf="content$ | async as footer" class="movies-footer">
+  <icon-button *ngFor="let button of footer.buttons" [buttonDenomination]="button"></icon-button>
+</footer>

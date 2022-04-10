@@ -1,8 +1,14 @@
-:host {
+.movies-spinner {
+  position: absolute;
+  top: 0;
+  background-color: rgba($color: #ffffff, $alpha: 0.6);
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

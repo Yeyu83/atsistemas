@@ -11,7 +11,7 @@ import { TitleService } from '@shared/services/title.service';
   styleUrls: ['./movie-detail.component.scss'],
 })
 export class MovieDetailComponent implements OnInit {
-  public movie$: Observable<Movie | undefined> | undefined;
+  public movie$!: Observable<Movie | undefined>;
 
   constructor(
     private readonly moviesService: MoviesService,
